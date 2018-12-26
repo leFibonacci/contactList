@@ -1,0 +1,8 @@
+<mat-form-field class="example-full-width">
+  <input matInput placeholder="Search" value="">
+</mat-form-field>
+<mat-grid-list cols="3" rowHeight="fit">
+  <div *ngFor="let currentUser of filteredUserList">
+    <app-user [user]="currentUser"></app-user>
+  </div>
+</mat-grid-list>

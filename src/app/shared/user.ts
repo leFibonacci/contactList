@@ -6,6 +6,7 @@ export interface IUser{
     imageSource: string,
     phoneNumber:string,
     eMailAdress:string,
+    addedDate:string,
     // calculateAge():number;
 }
 

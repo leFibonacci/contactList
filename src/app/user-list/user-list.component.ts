@@ -13,6 +13,7 @@ export class UserListComponent implements OnInit {
   }
   public set filterKey(value: string) {
     this._filterKey = value;
+    this.filteredUserList = this.filterKey ? this.performFilter(this.filterKey) : this.userList;
   }
 
   userList: IUser[] = [
@@ -23,7 +24,8 @@ export class UserListComponent implements OnInit {
       surname: "ERHALİM",
       imageSource: "https://material.angular.io/assets/img/examples/shiba2.jpg",
       eMailAdress: "dilaraeceozturk@gmail.com",
-      phoneNumber: "+905064347521"
+      phoneNumber: "+905064347521",
+      addedDate: "21.12.2018"
     },
     {
       id: 2,
@@ -32,12 +34,32 @@ export class UserListComponent implements OnInit {
       surname: "ERHALİM",
       imageSource: "https://material.angular.io/assets/img/examples/shiba2.jpg",
       eMailAdress: "ilkererhalim@gmail.com",
-      phoneNumber: "+905058748787"
+      phoneNumber: "+905058748787",
+      addedDate: "29.12.2018"
+    },
+    {
+      id: 3,
+      birthday: "02.05.1989",
+      name: "Kutay",
+      surname: "Şaşmaz",
+      imageSource: "https://material.angular.io/assets/img/examples/shiba2.jpg",
+      eMailAdress: "kutaysasmaz@gmail.com",
+      phoneNumber: "+905058748780",
+      addedDate: "10.01.2019"
     }];
   filteredUserList: IUser[] = null;
 
   constructor() {
     this.filteredUserList = this.userList;
+  }
+  performFilter(filterBy: string): IUser[] {
+    debugger
+    filterBy = filterBy.toLocaleLowerCase();
+    let users: IUser[] = this.filteredUserList.filter((user: IUser) => {
+      return user.name.toLocaleLowerCase().indexOf(filterBy) > -1
+        || user.surname.toLocaleLowerCase().indexOf(filterBy) > -1
+    });
+    return users;
   }
 
   ngOnInit() {

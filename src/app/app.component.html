@@ -1,8 +1,7 @@
-<mat-card>
-  <a mat-menu-item [routerLink]="['']">Home</a>
-  <a mat-menu-item [routerLink]="['/user-list']">Contacts</a>
-  <a mat-menu-item [routerLink]="['/user-detail']">UserDetails</a>
-</mat-card>
+<mat-toolbar ng-attr-id="rootMenu">
+    <a mat-button [routerLink]="['']">Home</a>
+    <a mat-button [routerLink]="['/user-list']">Contacts</a>
+</mat-toolbar>
 <mat-card>
   <router-outlet></router-outlet>
 </mat-card>

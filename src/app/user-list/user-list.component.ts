@@ -25,7 +25,8 @@ export class UserListComponent implements OnInit {
       imageSource: "https://material.angular.io/assets/img/examples/shiba2.jpg",
       eMailAdress: "dilaraeceozturk@gmail.com",
       phoneNumber: "+905064347521",
-      addedDate: "21.12.2018"
+      addedDate: "21.12.2018",
+      profession:"Doctor",
     },
     {
       id: 2,
@@ -35,7 +36,8 @@ export class UserListComponent implements OnInit {
       imageSource: "https://material.angular.io/assets/img/examples/shiba2.jpg",
       eMailAdress: "ilkererhalim@gmail.com",
       phoneNumber: "+905058748787",
-      addedDate: "29.12.2018"
+      addedDate: "29.12.2018",
+      profession: "Software Specialist"
     },
     {
       id: 3,
@@ -45,7 +47,8 @@ export class UserListComponent implements OnInit {
       imageSource: "https://material.angular.io/assets/img/examples/shiba2.jpg",
       eMailAdress: "kutaysasmaz@gmail.com",
       phoneNumber: "+905058748780",
-      addedDate: "10.01.2019"
+      addedDate: "10.01.2019",
+      profession : "Actor"
     }];
   filteredUserList: IUser[] = null;
 
@@ -53,7 +56,6 @@ export class UserListComponent implements OnInit {
     this.filteredUserList = this.userList;
   }
   performFilter(filterBy: string): IUser[] {
-    debugger
     filterBy = filterBy.toLocaleLowerCase();
     let users: IUser[] = this.filteredUserList.filter((user: IUser) => {
       return user.name.toLocaleLowerCase().indexOf(filterBy) > -1

@@ -7,6 +7,7 @@ export interface IUser{
     phoneNumber:string,
     eMailAdress:string,
     addedDate:string,
+    profession:string,
     // calculateAge():number;
 }
 

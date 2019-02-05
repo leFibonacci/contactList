@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: "user-list", component: UserListComponent, },
   { path: "user-detail", component: UserDetailComponent },
   { path: '', redirectTo: 'user-list', pathMatch: 'full' },
+  
 ];
 
 @NgModule({

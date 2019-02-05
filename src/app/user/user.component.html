@@ -1,7 +1,7 @@
 <mat-card class="example-card" flex-gt-sm="30">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title (click)="test()" routerLink="/user-detail/{{user.id}}">{{user.name | withLastName: user.surname}} </mat-card-title>
+    <mat-card-title (click)="goToDetail()">{{user.name | withLastName: user.surname}} </mat-card-title>
     <mat-card-subtitle></mat-card-subtitle>
   </mat-card-header>
   <img mat-card-image [src]="user.imageSource" alt="Photo of user" title="Poto of user.name">

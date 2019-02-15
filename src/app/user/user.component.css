@@ -3,3 +3,7 @@
     margin: 5px;
   }
   
+  .mat-card-header:hover {
+    opacity: .8;
+    cursor: pointer;
+  }

@@ -22,18 +22,18 @@ export class UserListComponent implements OnInit {
       birthday: "11.12.1991",
       name: "Dilara",
       surname: "ERHALİM",
-      imageSource: "https://material.angular.io/assets/img/examples/shiba2.jpg",
+      imageSource: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtzdZLJlcT4O-_Hx_dRe619WBjt_3XhqCP1tnh03e8cZCuyAs",
       eMailAdress: "dilaraeceozturk@gmail.com",
       phoneNumber: "+905064347521",
       addedDate: "21.12.2018",
-      profession:"Doctor",
+      profession: "Doctor",
     },
     {
       id: 2,
       birthday: "12.11.1992",
       name: "İlker",
       surname: "ERHALİM",
-      imageSource: "https://material.angular.io/assets/img/examples/shiba2.jpg",
+      imageSource: "https://www.clipartmax.com/png/small/137-1370210_resting-vector-relax-icon-transparent-background.png",
       eMailAdress: "ilkererhalim@gmail.com",
       phoneNumber: "+905058748787",
       addedDate: "29.12.2018",
@@ -44,11 +44,44 @@ export class UserListComponent implements OnInit {
       birthday: "02.05.1989",
       name: "Kutay",
       surname: "Şaşmaz",
-      imageSource: "https://material.angular.io/assets/img/examples/shiba2.jpg",
+      imageSource: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMk4ZtdazONutGwRjHShtBMtyRm-zo0A7PFuxQdASM0aCMAe39fg",
       eMailAdress: "kutaysasmaz@gmail.com",
       phoneNumber: "+905058748780",
       addedDate: "10.01.2019",
-      profession : "Actor"
+      profession: "Actor"
+    },
+    {
+      id: 1,
+      birthday: "11.12.1991",
+      name: "Dilara",
+      surname: "ERHALİM",
+      imageSource: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtzdZLJlcT4O-_Hx_dRe619WBjt_3XhqCP1tnh03e8cZCuyAs",
+      eMailAdress: "dilaraeceozturk@gmail.com",
+      phoneNumber: "+905064347521",
+      addedDate: "21.12.2018",
+      profession: "Doctor",
+    },
+    {
+      id: 2,
+      birthday: "12.11.1992",
+      name: "İlker",
+      surname: "ERHALİM",
+      imageSource: "https://www.clipartmax.com/png/small/137-1370210_resting-vector-relax-icon-transparent-background.png",
+      eMailAdress: "ilkererhalim@gmail.com",
+      phoneNumber: "+905058748787",
+      addedDate: "29.12.2018",
+      profession: "Software Specialist"
+    },
+    {
+      id: 3,
+      birthday: "02.05.1989",
+      name: "Kutay",
+      surname: "Şaşmaz",
+      imageSource: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMk4ZtdazONutGwRjHShtBMtyRm-zo0A7PFuxQdASM0aCMAe39fg",
+      eMailAdress: "kutaysasmaz@gmail.com",
+      phoneNumber: "+905058748780",
+      addedDate: "10.01.2019",
+      profession: "Actor"
     }];
   filteredUserList: IUser[] = null;
 
@@ -56,10 +89,10 @@ export class UserListComponent implements OnInit {
     this.filteredUserList = this.userList;
   }
   performFilter(filterBy: string): IUser[] {
-    filterBy = filterBy.toLocaleLowerCase();
-    let users: IUser[] = this.filteredUserList.filter((user: IUser) => {
-      return user.name.toLocaleLowerCase().indexOf(filterBy) > -1
-        || user.surname.toLocaleLowerCase().indexOf(filterBy) > -1
+    filterBy = filterBy.toLowerCase();
+    let users: IUser[] = this.userList.filter((user: IUser) => {
+      return user.name.toLowerCase().indexOf(filterBy) > -1
+        || user.surname.toLowerCase().indexOf(filterBy) > -1
     });
     return users;
   }

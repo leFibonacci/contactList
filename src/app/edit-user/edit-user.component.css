@@ -1,6 +1,12 @@
-ul{
-    list-style-type : none;
-}
+.container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container > * {
+    width: 100%;
+  }
+
 .mat-card{
     width : 50%;
     margin : 5px auto;
@@ -8,8 +14,4 @@ ul{
 }
 .mat-card-actions{
     text-align: right;
-}
-
-.mat-card:first-child img:first-child{
-    max-height: 30px;
 }

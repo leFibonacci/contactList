@@ -5,6 +5,6 @@ import { PipeTransform, Pipe } from '@angular/core';
 })
 export class WithLastnamePipe implements PipeTransform{
     transform(_value: string, _character: string) {
-        return _value + ' ' + _character;
+        return _value + ' ' + _character.toUpperCase();
     }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IUser } from '../shared/user';
 import { Router } from '@angular/router';
+import { UserService } from '../shared/user.service';
 
 @Component({
   selector: 'app-user',
@@ -11,7 +12,7 @@ export class UserComponent implements OnInit {
 
   @Input() user: IUser;
 
-  constructor(private readonly router: Router) {
+  constructor(private userService: UserService, private readonly router: Router) {
 
   }
 
@@ -21,5 +22,7 @@ export class UserComponent implements OnInit {
   goToDetails() {
     this.router.navigate(['user-detail', { id: this.user.id }]);
   }
-
+  changeFavoriteStatus() {
+    this.userService.setFavorite(this.user.id);
+  }
 }

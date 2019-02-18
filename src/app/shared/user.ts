@@ -1,13 +1,15 @@
-export interface IUser{
+export interface IUser {
     id: number,
     name: string,
-    surname:string,
-    birthday:string,
+    surname: string,
+    birthday: string,
     imageSource: string,
-    phoneNumber:string,
-    eMailAdress:string,
-    addedDate:string,
-    profession:string,
+    phoneNumber: string,
+    eMailAdress?: string,
+    addedDate: string,
+    profession?: string,
+    isFavorite?: boolean,
+    favIconSrc?:string,
     // calculateAge():number;
 }
 

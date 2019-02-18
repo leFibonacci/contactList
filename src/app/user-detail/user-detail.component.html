@@ -1,4 +1,39 @@
-<p>
-  User Detail - {{userId}}
-</p>
-
+<mat-card>
+  <h3>
+    {{user.name | withLastName: user.surname}} <img (click)="changeFavoriteStatus()" [src]="user.favIconSrc"/>
+  </h3>
+</mat-card>
+<mat-card>
+  <mat-card-content>
+    <mat-grid-list cols="2">
+      <mat-grid-tile>
+        <img mat-card-image [src]="user.imageSource" [alt]="user.mame">
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <ul>
+          <li>
+            <label>No : {{user.id}}</label>
+          </li>
+          <li>
+            <label>Cep Tel. : {{user.phoneNumber}}</label>
+          </li>
+          <li>
+            <label>E-posta : {{user.eMailAdress}}</label>
+          </li>
+          <li>
+            <label>Meslek : {{user.profession}}</label>
+          </li>
+          <li>
+            <label>Doğum günü : {{user.birthday}} / {{user.birthday | asAge}}</label>
+          </li>
+          <li>
+            <label>Eklenme Tarihi : {{user.addedDate}}</label>
+          </li>
+        </ul>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="goToEditPanel()"> Düzenle </button>
+  </mat-card-actions>
+</mat-card>

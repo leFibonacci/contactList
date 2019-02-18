@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 
-import { MatButtonModule, MatInputModule, MatCardModule, MatTableModule, MatMenuModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatInputModule, MatCardModule, MatTableModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { WithLastnamePipe } from './shared/with-lastname.pipe';
@@ -13,6 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { AsAgePipe } from './shared/as-age.pipe';
 import { FormsModule } from '@angular/forms';
+import { UserService } from './shared/user.service';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     UserDetailComponent,
     UserListComponent,
     WithLastnamePipe,
-    AsAgePipe
+    AsAgePipe,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
@@ -34,9 +37,10 @@ import { FormsModule } from '@angular/forms';
     MatMenuModule,
     MatGridListModule,
     FormsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatIconModule,
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

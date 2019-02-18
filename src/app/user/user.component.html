@@ -1,4 +1,4 @@
-<mat-card class="example-card">
+<mat-card class="user-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title (click)="goToDetails()">{{user.name | withLastName: user.surname}} </mat-card-title>
@@ -7,10 +7,10 @@
   <img mat-card-image [src]="user.imageSource" [alt]="user.mame" [title]="user.name">
   <mat-card-content>
     <p>
-      {{user.birthday | asAge}}
+      {{user.phoneNumber}}
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>LIKE</button>
+    <button mat-button [color]="user.isFavorite?accent:primary" (click)="addFavorite()">Add Favorites</button>
   </mat-card-actions>
 </mat-card>

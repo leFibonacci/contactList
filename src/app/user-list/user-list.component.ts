@@ -21,7 +21,6 @@ export class UserListComponent implements OnInit {
   filteredUserList: IUser[] = null;
 
   constructor(private _userService: UserService) {
-    debugger
     this.filteredUserList = this.userList;
   }
   performFilter(filterBy: string): IUser[] {

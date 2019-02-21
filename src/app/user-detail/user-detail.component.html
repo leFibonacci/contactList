@@ -1,6 +1,6 @@
 <mat-card>
   <h3>
-    {{user.name | withLastName: user.surname}} <img (click)="changeFavoriteStatus()" [src]="user.favIconSrc"/>
+    {{user.name | withLastName: user.surname}} <img (click)="changeFavoriteStatus()" [src]="user.favIconSrc" class="favIcon"/>
   </h3>
 </mat-card>
 <mat-card>

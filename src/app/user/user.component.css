@@ -7,3 +7,6 @@
     opacity: .8;
     cursor: pointer;
   }
+  .favIcon{
+    max-height: 30px;
+}

@@ -6,6 +6,9 @@ import { IUser } from './user';
 })
 export class UserService {
 
+    readonly favIconPath: string = "assets/images/favorite.png";
+    readonly unFavIconPath: string = "assets/images/unfavorite.png";
+
     getUsers(): IUser[] {
         return [
             {
@@ -17,6 +20,8 @@ export class UserService {
                 eMailAdress: "dilaraeceozturk@gmail.com",
                 phoneNumber: "+905064347521",
                 addedDate: "21.12.2018",
+                isFavorite: true,
+                favIconSrc: this.favIconPath,
             },
             {
                 id: 2,
@@ -26,7 +31,9 @@ export class UserService {
                 imageSource: "assets/images/boy-image.png",
                 phoneNumber: "+905058748787",
                 addedDate: "29.12.2018",
-                profession: "Software Specialist"
+                profession: "Software Specialist",
+                isFavorite: true,
+                favIconSrc: this.favIconPath,
             },
             {
                 id: 3,
@@ -37,7 +44,9 @@ export class UserService {
                 eMailAdress: "freemon@gmail.com",
                 phoneNumber: "+905058748780",
                 addedDate: "10.01.2019",
-                profession: "Actor"
+                profession: "Actor",
+                isFavorite: true,
+                favIconSrc: this.favIconPath,
             },
             {
                 id: 4,
@@ -49,6 +58,8 @@ export class UserService {
                 phoneNumber: "+905064347521",
                 addedDate: "21.12.2018",
                 profession: "Doctor",
+                isFavorite: false,
+                favIconSrc: this.unFavIconPath,
             },
             {
                 id: 5,
@@ -59,7 +70,9 @@ export class UserService {
                 eMailAdress: "ilkererhalim@gmail.com",
                 phoneNumber: "+905058748787",
                 addedDate: "29.12.2018",
-                profession: "Software Specialist"
+                profession: "Software Specialist",
+                isFavorite: false,
+                favIconSrc: this.unFavIconPath,
             },
             {
                 id: 6,
@@ -70,31 +83,22 @@ export class UserService {
                 eMailAdress: "tchaikowsky@gmail.com",
                 phoneNumber: "+905058748780",
                 addedDate: "10.01.2019",
-                profession: "Film müziği bestecisi"
+                profession: "Film müziği bestecisi",
+                isFavorite: true,
+                favIconSrc: this.favIconPath,
             }];
     }
 
     getById(id: number): IUser {
-        console.log(id + " id li kullanıcı çekildi");
-        let current: IUser = {
-            name: "Andre",
-            surname: "Tchaikowsky",
-            addedDate: "18.02.2019",
-            imageSource: "assets/images/tschaikowsky.jpg",
-            birthday: "07.05.1840",
-            id: id,
-            eMailAdress: "tchaikowsky@gmail.com",
-            profession: "Film müziği bestecisi",
-            phoneNumber: "4055645645",
-            // isFavorite:,
-        };
-        current.isFavorite = (current.id % 2) == 0;
-        current.favIconSrc = current.isFavorite ? "assets/images/favorite.png" : "assets/images/unfavorite.png";
+        let current: IUser = this.getUsers().filter(x => x.id == id)[0];
+        current.favIconSrc = current.isFavorite ? this.favIconPath : this.unFavIconPath;
         return current;
     }
-
+   
     setFavorite(id: number): any {
+        debugger
         let current = this.getById(id);
         current.isFavorite = !current.isFavorite;
+        return current.favIconSrc = current.isFavorite ? this.favIconPath : this.unFavIconPath;
     }
 }

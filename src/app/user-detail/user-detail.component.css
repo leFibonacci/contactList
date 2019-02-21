@@ -10,6 +10,6 @@ ul{
     text-align: right;
 }
 
-.mat-card:first-child img:first-child{
+.favIcon{
     max-height: 30px;
 }

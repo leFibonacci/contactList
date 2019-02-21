@@ -23,6 +23,6 @@ export class UserComponent implements OnInit {
     this.router.navigate(['user-detail', { id: this.user.id }]);
   }
   changeFavoriteStatus() {
-    this.userService.setFavorite(this.user.id);
+    this.user.favIconSrc = this.userService.setFavorite(this.user.id);
   }
 }

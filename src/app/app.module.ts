@@ -15,6 +15,7 @@ import { AsAgePipe } from './shared/as-age.pipe';
 import { FormsModule } from '@angular/forms';
 import { UserService } from './shared/user.service';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     FormsModule,
     MatToolbarModule,
     MatIconModule,
+    HttpClientModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

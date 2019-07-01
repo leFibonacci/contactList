@@ -1,15 +1,17 @@
 <mat-card>
-  <mat-card-content>
-    <div class="container">
-      <mat-form-field><input matInput placeholder="Ad" [(ngModel)]="user.name"></mat-form-field>
-      <mat-form-field><input matInput placeholder="Soyad" [(ngModel)]="user.surname"></mat-form-field>
-      <mat-form-field><input matInput placeholder="Cep Tel." [(ngModel)]="user.phoneNumber"></mat-form-field>
-      <mat-form-field><input matInput placeholder="E-Posta" [(ngModel)]="user.eMailAdress"></mat-form-field>
-      <mat-form-field><input matInput placeholder="Doğum Tarihi" [(ngModel)]="user.birthday"></mat-form-field>
-      <mat-form-field><input matInput placeholder="Meslek" [(ngModel)]="user.profession"></mat-form-field>
-    </div>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button color="primary" (click)="editUser()"> Güncelle </button>
-  </mat-card-actions>
+  <form [formGroup]="profileForm">
+    <mat-card-content>
+      <div class="container">
+        <mat-form-field><input matInput placeholder="Ad" [(ngModel)]="user.name"></mat-form-field>
+        <mat-form-field><input matInput placeholder="Soyad" [(ngModel)]="user.surname"></mat-form-field>
+        <mat-form-field><input matInput placeholder="Cep Tel." [(ngModel)]="user.phoneNumber"></mat-form-field>
+        <mat-form-field><input matInput placeholder="E-Posta" [(ngModel)]="user.eMailAdress"></mat-form-field>
+        <mat-form-field><input matInput placeholder="Doğum Tarihi" [(ngModel)]="user.birthday"></mat-form-field>
+        <mat-form-field><input matInput placeholder="Meslek" [(ngModel)]="user.profession"></mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="editUser()"> Güncelle </button>
+    </mat-card-actions>
+  </form>
 </mat-card>

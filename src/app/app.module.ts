@@ -12,7 +12,7 @@ import { WithLastnamePipe } from './shared/with-lastname.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { AsAgePipe } from './shared/as-age.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './shared/user.service';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -40,7 +40,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     MatToolbarModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './shared/user.service';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DigitOnlyDirective } from './digit-only.directive';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     UserListComponent,
     WithLastnamePipe,
     AsAgePipe,
-    EditUserComponent
+    EditUserComponent,
+    DigitOnlyDirective
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Directive, Inject, ElementRef, HostListener, Self, EventEmitter, Output, OnInit, NgZone } from '@angular/core';
+import { Directive , HostListener } from '@angular/core';
 import { NgModel } from '@angular/forms';
 
 @Directive({
@@ -9,8 +9,8 @@ export class DigitOnlyDirective {
   constructor(private model: NgModel) {
   }
 
-  @HostListener("keyup", ['$event'])
-  checkifInputIsDigit(event) {
+  @HostListener("keyup")
+  checkifInputIsDigit() {
     const newValue = this.model.value.replace(/\D/g, '');
       this.model.valueAccessor.writeValue(newValue);   
   }

@@ -1,13 +1,13 @@
 <mat-card>
-  <form [formGroup]="profileForm">
+  <form>
     <mat-card-content>
       <div class="container">
-        <mat-form-field><input matInput placeholder="Ad" [(ngModel)]="user.name"></mat-form-field>
-        <mat-form-field><input matInput placeholder="Soyad" [(ngModel)]="user.surname"></mat-form-field>
-        <mat-form-field><input matInput placeholder="Cep Tel." [(ngModel)]="user.phoneNumber"></mat-form-field>
-        <mat-form-field><input matInput placeholder="E-Posta" [(ngModel)]="user.eMailAdress"></mat-form-field>
-        <mat-form-field><input matInput placeholder="Doğum Tarihi" [(ngModel)]="user.birthday"></mat-form-field>
-        <mat-form-field><input matInput placeholder="Meslek" [(ngModel)]="user.profession"></mat-form-field>
+        <mat-form-field><input matInput placeholder="Ad" name="name" [(ngModel)]="user.name"></mat-form-field>
+        <mat-form-field><input matInput placeholder="Soyad" name="surname" [(ngModel)]="user.surname"></mat-form-field>
+        <mat-form-field><input matInput appDigitOnly  name="phoneNumber" placeholder="Cep Tel." [(ngModel)]="user.phoneNumber"></mat-form-field>
+        <mat-form-field><input matInput placeholder="E-Posta" name="eMailAdress" [(ngModel)]="user.eMailAdress"></mat-form-field>
+        <mat-form-field><input matInput placeholder="Doğum Tarihi" name="birthday" [(ngModel)]="user.birthday"></mat-form-field>
+        <mat-form-field><input matInput placeholder="Meslek" name="profession" [(ngModel)]="user.profession"></mat-form-field>
       </div>
     </mat-card-content>
     <mat-card-actions>

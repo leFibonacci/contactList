@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { MatButtonModule, MatInputModule, MatCardModule, MatTableModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
 import { UserDetailComponent } from './user-detail/user-detail.component';
@@ -19,7 +19,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DigitOnlyDirective } from './digit-only.directive';
 import { ImageSelectorComponent } from './components/image-selector/image-selector.component';
-
+import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -48,7 +48,8 @@ import { ImageSelectorComponent } from './components/image-selector/image-select
     MatIconModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSnackBarModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

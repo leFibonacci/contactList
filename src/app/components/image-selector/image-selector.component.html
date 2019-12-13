@@ -7,7 +7,7 @@
 
   <mat-grid-list cols="2" rowHeight="2:1">
     <mat-grid-tile (click)="setValue(item)" *ngFor="let item of imageSource">
-      <div class="image" [ngStyle]="{'background-image': 'url(' + item + ')'}" [ngClass]="{'selected': value == item}">
+      <div class="image" [ngStyle]="{'background-image': 'url(' + item + ')'}" [ngClass]="{'selected': value==item}">
         <div class="overlay"></div>
       </div>
     </mat-grid-tile>

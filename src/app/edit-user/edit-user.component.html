@@ -13,7 +13,7 @@
         <mat-form-field><input matInput placeholder="Meslek" name="profession" [(ngModel)]="user.profession">
         </mat-form-field>
 
-          <app-image-selector></app-image-selector>
+        <app-image-selector #selector name="imageSource" [(ngModel)]="user.imageSource"></app-image-selector>
 
       </div>
     </mat-card-content>

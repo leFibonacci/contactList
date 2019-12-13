@@ -8,6 +8,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => ImageSelectorComponent),
+    multi: true
   }]
 })
 export class ImageSelectorComponent implements OnInit, ControlValueAccessor {
@@ -34,22 +35,22 @@ export class ImageSelectorComponent implements OnInit, ControlValueAccessor {
   setValue(newValue) {
     if (this.value === newValue) {
       this.value = null;
-    } else{
+    } else {
       this.value = newValue;
     }
+    this.onTouched();
+    this.onChange(this.value);
   }
-
+  onChange: (_: string) => {}
+  onTouched: () => {}
   writeValue(obj: any): void {
-    throw new Error("Method not implemented.");
+    this.value = obj;
   }
   registerOnChange(fn: any): void {
-    throw new Error("Method not implemented.");
+    console.log(fn);
+    this.onChange = fn;
   }
   registerOnTouched(fn: any): void {
-    throw new Error("Method not implemented.");
+    this.onTouched = fn;
   }
-  setDisabledState?(isDisabled: boolean): void {
-    throw new Error("Method not implemented.");
-  }
-
 }

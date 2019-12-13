@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { UserService } from '../shared/user.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IUser } from '../shared/user';
+import { MatSnackBar } from '@angular/material';
+import { ImageSelectorComponent } from '../components/image-selector/image-selector.component';
 
 @Component({
   selector: 'app-edit-user',
@@ -11,9 +13,13 @@ import { IUser } from '../shared/user';
 export class EditUserComponent implements OnInit {
   user: IUser;
 
+  @ViewChild('selector')
+  mySelector: ImageSelectorComponent;
+
   constructor(private userService: UserService,
     private readonly activetedRouter: ActivatedRoute,
-    private readonly router: Router) {
+    private readonly router: Router,
+    private _snackBar: MatSnackBar) {
     this.activetedRouter.paramMap.subscribe(params => {
       let userId = parseInt(params.get("userId"));
       this.user = userService.getById(userId);
@@ -24,6 +30,11 @@ export class EditUserComponent implements OnInit {
   }
 
   editUser() {
+    console.log(this.mySelector);
     console.log(this.user);
+    this._snackBar.open("Kişi güncelleme başarılı.", "OK", {
+      duration: 2000,
+    });
+    this.router.navigate(['']);
   }
 }

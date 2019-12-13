@@ -11,15 +11,13 @@
     position: absolute; 
     bottom: 0; 
     top:0;
-    background: rgb(216, 100, 100);
+    right:0;
+    left:0;
     background: rgba(216, 100, 100, 0.5); /* Black see-through */
     color: #f1f1f1; 
-    width: 100%;
     transition: .5s ease;
     opacity:0;
     color: white;
-    font-size: 20px;
-    text-align: center;
 }
 
 .image.selected > .overlay{

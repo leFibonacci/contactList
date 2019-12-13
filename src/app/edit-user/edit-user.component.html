@@ -4,10 +4,17 @@
       <div class="container">
         <mat-form-field><input matInput placeholder="Ad" name="name" [(ngModel)]="user.name"></mat-form-field>
         <mat-form-field><input matInput placeholder="Soyad" name="surname" [(ngModel)]="user.surname"></mat-form-field>
-        <mat-form-field><input matInput appDigitOnly  name="phoneNumber" placeholder="Cep Tel." [(ngModel)]="user.phoneNumber"></mat-form-field>
-        <mat-form-field><input matInput placeholder="E-Posta" name="eMailAdress" [(ngModel)]="user.eMailAdress"></mat-form-field>
-        <mat-form-field><input matInput placeholder="Doğum Tarihi" name="birthday" [(ngModel)]="user.birthday"></mat-form-field>
-        <mat-form-field><input matInput placeholder="Meslek" name="profession" [(ngModel)]="user.profession"></mat-form-field>
+        <mat-form-field><input matInput appDigitOnly name="phoneNumber" placeholder="Cep Tel."
+            [(ngModel)]="user.phoneNumber"></mat-form-field>
+        <mat-form-field><input matInput placeholder="E-Posta" name="eMailAdress" [(ngModel)]="user.eMailAdress">
+        </mat-form-field>
+        <mat-form-field><input matInput placeholder="Doğum Tarihi" name="birthday" [(ngModel)]="user.birthday">
+        </mat-form-field>
+        <mat-form-field><input matInput placeholder="Meslek" name="profession" [(ngModel)]="user.profession">
+        </mat-form-field>
+
+          <app-image-selector></app-image-selector>
+
       </div>
     </mat-card-content>
     <mat-card-actions>

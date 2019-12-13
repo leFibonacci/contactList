@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import { MatButtonModule, MatInputModule, MatCardModule, MatTableModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
 import { UserDetailComponent } from './user-detail/user-detail.component';
@@ -17,6 +18,8 @@ import { UserService } from './shared/user.service';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DigitOnlyDirective } from './digit-only.directive';
+import { ImageSelectorComponent } from './components/image-selector/image-selector.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import { DigitOnlyDirective } from './digit-only.directive';
     WithLastnamePipe,
     AsAgePipe,
     EditUserComponent,
-    DigitOnlyDirective
+    DigitOnlyDirective,
+    ImageSelectorComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,8 @@ import { DigitOnlyDirective } from './digit-only.directive';
     MatToolbarModule,
     MatIconModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatExpansionModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
